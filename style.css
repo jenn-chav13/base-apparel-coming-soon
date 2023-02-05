@@ -1,0 +1,153 @@
+:root {
+    
+    --Desaturated-Red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+    --Gradient-one: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --Submit-button-gradient: linear-gradient(90deg, rgba(251,222,222,1) 24%, rgba(248,191,191,1) 100%);
+    --Gradient-two: linear-gradient(90deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+input {
+    font: inherit;
+    background: transparent;
+    color: var(--Desaturated-Red);
+}
+
+input::placeholder {
+    color: var(--Desaturated-Red);
+}
+
+input:focus-visible {
+    outline: var(--Desaturated-Red) auto 1px;
+    border: 1px solid var(--Desaturated-Red);
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+main {
+   width: 100%;
+   box-sizing: border-box;
+   background: var(--Gradient-one);
+}
+
+.logo-container {
+    box-sizing: border-box;
+    padding: 32px;
+    height: 83px;
+}
+
+.logo-container img {
+    height: 20px;
+}
+
+.hero-mobile {
+    width: 100%;
+}
+
+.hero-desktop {
+    display: none;
+}
+
+h1 {
+    color: var(--Dark-Grayish-Red);
+}
+
+h1.title {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2.375rem;
+    letter-spacing: 0.75rem;
+    margin-bottom: 10.46px;
+}
+
+h1 div.pink {
+    color: var(--Desaturated-Red);
+    font-weight: 300;
+}
+
+.description {
+    color: var(--Desaturated-Red);
+    text-align: center;
+    padding-inline: 4px;
+    line-height: 1.5;
+}
+
+input[type="email"] {
+    border: 1px solid var(--Desaturated-Red);
+    border-radius: 30px;
+    height: 45px;
+    width: 90%;
+    padding-left: 20px;
+}
+
+input[type="email"].email-error {
+    border: 2px solid var(--Soft-Red);
+}
+
+.subscription-form {
+    height: 48px;
+    margin-block: 30px;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.subscription-form button {
+    background: var(--Gradient-two);
+    border: none;
+    border-radius: 30px;
+    width: 65px;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    cursor: pointer;
+    box-shadow: 0px 5px 20px var(--Desaturated-Red);
+}
+
+.subscription-form button:active {
+    background: var(--Submit-button-gradient);
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 28px;
+    padding-block: 32px;
+}
+.email-error-icon {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    right: 85px;
+}
+
+.email-error-icon.hidden {
+    display: none;
+}
+
+.error-message {
+    position: absolute;
+    bottom: -30px;
+    left: 30px;
+    color: var(--Soft-Red);
+    font-size: small;
+}
+
+.error-message.hidden {
+    display: none;
+}
