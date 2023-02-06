@@ -1,5 +1,4 @@
 :root {
-    
     --Desaturated-Red: hsl(0, 36%, 70%);
     --Soft-Red: hsl(0, 93%, 68%);
     --Dark-Grayish-Red: hsl(0, 6%, 24%);
@@ -7,6 +6,10 @@
     --Submit-button-gradient: linear-gradient(90deg, rgba(251,222,222,1) 24%, rgba(248,191,191,1) 100%);
     --Gradient-two: linear-gradient(90deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 }
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 
 input {
     font: inherit;
@@ -34,6 +37,7 @@ body {
 }
 
 main {
+    overflow: hidden;
    width: 100%;
    box-sizing: border-box;
    background: var(--Gradient-one);
@@ -85,7 +89,7 @@ input[type="email"] {
     border: 1px solid var(--Desaturated-Red);
     border-radius: 30px;
     height: 45px;
-    width: 90%;
+    width: 100%;
     padding-left: 20px;
 }
 
@@ -150,4 +154,95 @@ input[type="email"].email-error {
 
 .error-message.hidden {
     display: none;
+}
+
+
+@media screen and (min-width: 1200px) {
+    body {
+        font-size: 1rem;
+    }
+
+    main {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 58% 42%;
+        grid-template-areas:
+        'header hero'
+        'main   hero'
+        'main   hero'
+        'footer hero';
+    }
+
+    h1.title {
+        text-align: left;
+        font-size: 4rem;
+        letter-spacing: 1rem;
+        line-height: 1.1;
+    }
+
+    input[type="email"] {
+        height: 56px;
+        padding-left: 30px;
+    }
+
+    .description {
+        text-align: left;
+        line-height: 1.7;
+        margin-top: 10px;
+    }
+
+
+   .logo-container {
+        grid-area: header;
+        margin-top: 33px;
+        margin-left: 15%;
+   }
+
+   .logo-container img {
+        height: unset;
+   }
+
+   .hero {
+        grid-area: hero;
+   }
+
+   .hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+   }
+      
+   .hero-desktop {
+        display: block;
+   }
+
+   .hero-mobile {
+        display: none;
+   }
+
+   .content {
+        grid-area: main;
+        padding-left: 19%;
+        align-items: start;
+        padding-right: 29%;
+        line-height: 1.7;
+
+   }
+
+   .form-group {
+        justify-content: start;
+        max-width: 450px;
+   }
+
+   .subscription-form {
+        margin-block: 40px;
+   }
+
+   .subscription-form button {
+        width: 100px;
+   }
+
+   .footer {
+        grid-area: footer;
+   }
 }
