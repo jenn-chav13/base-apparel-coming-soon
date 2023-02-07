@@ -3,13 +3,16 @@
     --Soft-Red: hsl(0, 93%, 68%);
     --Dark-Grayish-Red: hsl(0, 6%, 24%);
     --Gradient-one: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
-    --Submit-button-gradient: linear-gradient(90deg, rgba(251,222,222,1) 24%, rgba(248,191,191,1) 100%);
+    --Submit-button-gradient: linear-gradient(90deg, hsl(0, 78%, 93%) 24%, hsl(0, 80%, 86%) 100%);
     --Gradient-two: linear-gradient(90deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 }
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
+button {
+    -webkit-tap-highlight-color: transparent;
+}
 
 input {
     font: inherit;
@@ -163,6 +166,8 @@ input[type="email"].email-error {
     }
 
     main {
+        background: no-repeat url(./images/bg-pattern-desktop.svg) ,linear-gradient(140deg, hsl(0, 0%, 100%) 10%, hsl(0, 100%, 98%) 75%);
+        background-size: 60vw 100vh;
         height: 100vh;
         display: grid;
         grid-template-columns: 58% 42%;
@@ -240,6 +245,10 @@ input[type="email"].email-error {
 
    .subscription-form button {
         width: 100px;
+   }
+
+   .email-error-icon {
+        right: 115px;
    }
 
    .footer {
